@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://f843ji7i4w6d"]
+
+[ext_resource type="Shader" uid="uid://2goe6cwhjwg4" path="res://shaders/ground_texture.tres" id="2_t3jfc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_63qx3"]
+render_priority = 0
+shader = ExtResource("2_t3jfc")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kd76e"]
+material = SubResource("ShaderMaterial_63qx3")
+size = Vector2(50, 50)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_kd76e")

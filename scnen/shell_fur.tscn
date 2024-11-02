@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0l6silwvvvu5"]
+
+[ext_resource type="Script" path="res://scripts/shell_fur.gd" id="1_3s085"]
+[ext_resource type="ArrayMesh" uid="uid://dja07wur8bylw" path="res://models/grass-collection.tres" id="2_58cay"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_l3cfe"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_wr06a"]
+radius = 10.0
+height = 20.0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("target_mesh_instance")]
+script = ExtResource("1_3s085")
+target_mesh_instance = NodePath("../MeshInstance3D")
+fur_base_mesh = SubResource("BoxMesh_l3cfe")
+grass_blade_mesh = ExtResource("2_58cay")
+grass_shell_count = 10
+
+[node name="Node3D3" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 8.4852, 6.73112)
+
+[node name="Camera3D" type="Camera3D" parent="Node3D3"]
+transform = Transform3D(1, 0, 0, 0, 0.856736, 0.515756, 0, -0.515756, 0.856736, 0, 0, 19.3824)
+current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_wr06a")
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 90, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.16176, 0)

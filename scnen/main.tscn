@@ -1,25 +1,25 @@
 [gd_scene load_steps=40 format=4 uid="uid://bd8epkqss774a"]
 
-[ext_resource type="Shader" uid="uid://du411q84c2rek" path="res://shaders/primary-ground.res" id="2_6efxl"]
-[ext_resource type="PackedScene" uid="uid://cooxgd6ojmuwf" path="res://models/pillar.glb" id="2_fb1tu"]
-[ext_resource type="PackedScene" uid="uid://lyiw1yiypg53" path="res://models/more-grass.blend" id="3_0lf45"]
-[ext_resource type="Shader" uid="uid://bcxhxmfnc7le" path="res://shaders/test.tres" id="3_cst0f"]
-[ext_resource type="Texture2D" uid="uid://dtib6ult15jwr" path="res://textures/grass_d.png" id="3_lo8ew"]
-[ext_resource type="Texture2D" uid="uid://d2vqqriy52fld" path="res://textures/grass-2.png" id="4_04y05"]
-[ext_resource type="Texture2D" uid="uid://bois67n6tp71h" path="res://models/pillar_normal.png" id="5_552pc"]
-[ext_resource type="Script" path="res://scripts/float.gd" id="5_eaj7j"]
-[ext_resource type="PackedScene" uid="uid://c0mhf1s8k7yee" path="res://thunder.tscn" id="7_4atwp"]
-[ext_resource type="PackedScene" uid="uid://divk3sjikvkfh" path="res://models/Praying.fbx" id="9_1563r"]
-[ext_resource type="PackedScene" uid="uid://cqxpbse04sa76" path="res://models/eye/scene.gltf" id="9_b8ljq"]
-[ext_resource type="Script" path="res://scripts/look_at_target.gd" id="9_p3bih"]
-[ext_resource type="Script" path="res://scripts/autoplay.gd" id="10_wudbu"]
-[ext_resource type="PackedScene" uid="uid://wn57cql11h35" path="res://models/skeleton-from-bonelab/source/Skeleton.fbx" id="11_8tl71"]
+[ext_resource type="PackedScene" uid="uid://lyiw1yiypg53" path="res://models/more-grass.blend" id="1_040nj"]
+[ext_resource type="Shader" uid="uid://bcxhxmfnc7le" path="res://shaders/super-grass.tres" id="2_w4725"]
+[ext_resource type="Texture2D" uid="uid://dtib6ult15jwr" path="res://textures/grass_d.png" id="3_j4fm2"]
+[ext_resource type="Texture2D" uid="uid://d2vqqriy52fld" path="res://textures/grass-2.png" id="4_hgq33"]
+[ext_resource type="Script" path="res://scripts/float.gd" id="5_mpl2q"]
+[ext_resource type="Texture2D" uid="uid://bois67n6tp71h" path="res://models/pilar/pillar_normal.png" id="6_l13ap"]
+[ext_resource type="PackedScene" uid="uid://cooxgd6ojmuwf" path="res://models/pilar/pillar.glb" id="7_fcljw"]
+[ext_resource type="PackedScene" uid="uid://wn57cql11h35" path="res://models/skeleton-from-bonelab/source/Skeleton.fbx" id="8_4w3fq"]
+[ext_resource type="PackedScene" uid="uid://divk3sjikvkfh" path="res://models/Praying.fbx" id="9_gfabu"]
+[ext_resource type="Script" path="res://scripts/autoplay.gd" id="10_l81x2"]
+[ext_resource type="PackedScene" uid="uid://c0mhf1s8k7yee" path="res://scnen/thunder.tscn" id="11_8ntcp"]
+[ext_resource type="Script" path="res://scripts/look_at_target.gd" id="12_psoqy"]
+[ext_resource type="PackedScene" uid="uid://cqxpbse04sa76" path="res://models/eye/scene.gltf" id="13_rp1qo"]
+[ext_resource type="Shader" uid="uid://2goe6cwhjwg4" path="res://shaders/ground_texture.tres" id="14_47h3l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o3pg7"]
 render_priority = 0
-shader = ExtResource("3_cst0f")
+shader = ExtResource("2_w4725")
 shader_parameter/Color = Color(0.484339, 0.466601, 0, 1)
-shader_parameter/Texture2DParameter = ExtResource("3_lo8ew")
+shader_parameter/Texture2DParameter = ExtResource("3_j4fm2")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_dswb7"]
 _surfaces = [{
@@ -59,9 +59,9 @@ buffer = PackedFloat32Array(0, 0, -0.653945, 23.538, 0, 0.653945, 0, 0, 0.653945
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0kfwe"]
 render_priority = 0
-shader = ExtResource("3_cst0f")
+shader = ExtResource("2_w4725")
 shader_parameter/Color = Color(0.25, 0.2375, 0, 1)
-shader_parameter/Texture2DParameter = ExtResource("4_04y05")
+shader_parameter/Texture2DParameter = ExtResource("4_hgq33")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6ftpj"]
 _surfaces = [{
@@ -114,7 +114,7 @@ cull_mode = 2
 albedo_color = Color(0.643136, 0.415686, 0.376471, 1)
 roughness = 0.5
 normal_enabled = true
-normal_texture = ExtResource("5_552pc")
+normal_texture = ExtResource("6_l13ap")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_eqxyg"]
 _surfaces = [{
@@ -1355,7 +1355,7 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h4511"]
 render_priority = 0
-shader = ExtResource("2_6efxl")
+shader = ExtResource("14_47h3l")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_t2t7q"]
 lightmap_size_hint = Vector2i(1000, 1000)
@@ -1373,10 +1373,10 @@ transform = Transform3D(-0.422618, -0.640856, 0.640856, 0, 0.707107, 0.707107, -
 shadow_enabled = true
 
 [node name="cam-pivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.8013, 10, 25.6755)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 16, 20)
 
 [node name="Camera3D" type="Camera3D" parent="cam-pivot"]
-transform = Transform3D(0.642787, 0, -0.766044, 0, 1, 0, 0.766044, 0, 0.642787, 0, 0, 0)
+transform = Transform3D(0.642788, 0.383022, -0.663414, 0, 0.866025, 0.5, 0.766044, -0.321394, 0.55667, 0, 0, 0)
 current = true
 size = 50.0
 far = 100.0
@@ -1390,17 +1390,17 @@ light_energy = 16.0
 spot_range = 1000.0
 spot_angle = 90.0
 
-[node name="more-grass" parent="." instance=ExtResource("3_0lf45")]
+[node name="more-grass" parent="." instance=ExtResource("1_040nj")]
 visible = false
 
 [node name="grass-manager-1" type="MultiMeshInstance3D" parent="."]
+visible = false
 multimesh = SubResource("MultiMesh_v21dx")
 
 [node name="grass-manager-2" type="MultiMeshInstance3D" parent="."]
 multimesh = SubResource("MultiMesh_pr6gr")
 
 [node name="area-of-effect" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("PlaneMesh_7gby6")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -1413,36 +1413,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.68034, 0)
 
 [node name="pillar2" type="Node3D" parent="env/pillar"]
 transform = Transform3D(-0.25333, -0.92697, -0.276677, 0.072938, 0.26689, -0.960963, 0.964626, -0.263621, 1.15233e-08, 3.05713, 19.0062, 13.6958)
-script = ExtResource("5_eaj7j")
+script = ExtResource("5_mpl2q")
 
 [node name="mesh" type="MeshInstance3D" parent="env/pillar/pillar2"]
 mesh = SubResource("ArrayMesh_drbeg")
 skeleton = NodePath("")
 
-[node name="pillar7" parent="env/pillar" instance=ExtResource("2_fb1tu")]
+[node name="pillar7" parent="env/pillar" instance=ExtResource("7_fcljw")]
 transform = Transform3D(0.879596, 0.364292, -0.305946, -0.344072, 0.931285, 0.119677, 0.32852, 0, 0.944497, 15.6612, 4.38932, 10.6842)
-script = ExtResource("5_eaj7j")
+script = ExtResource("5_mpl2q")
 
-[node name="pillar3" parent="env/pillar" instance=ExtResource("2_fb1tu")]
+[node name="pillar3" parent="env/pillar" instance=ExtResource("7_fcljw")]
 transform = Transform3D(0.850109, -0.433659, -0.298754, 0.40913, 0.901077, -0.143781, 0.331552, 0, 0.943437, 15.013, 7.36383, -0.952281)
-script = ExtResource("5_eaj7j")
+script = ExtResource("5_mpl2q")
 
-[node name="pillar4" parent="env/pillar" instance=ExtResource("2_fb1tu")]
+[node name="pillar4" parent="env/pillar" instance=ExtResource("7_fcljw")]
 transform = Transform3D(0.978942, 0, -0.204137, -0.03993, 0.980683, -0.191485, 0.200194, 0.195604, 0.960032, -2.36892, 6.98731, -15.7398)
-script = ExtResource("5_eaj7j")
+script = ExtResource("5_mpl2q")
 
-[node name="pillar6" parent="env/pillar" instance=ExtResource("2_fb1tu")]
+[node name="pillar6" parent="env/pillar" instance=ExtResource("7_fcljw")]
 transform = Transform3D(0.466572, 0, -0.884484, 0, 1, 0, 0.884484, 0, 0.466572, -14.8615, 16.7792, -15.7398)
-script = ExtResource("5_eaj7j")
+script = ExtResource("5_mpl2q")
 
-[node name="pillar5" parent="env/pillar" instance=ExtResource("2_fb1tu")]
+[node name="pillar5" parent="env/pillar" instance=ExtResource("7_fcljw")]
 transform = Transform3D(0.937537, -0.297658, -0.180066, 0.292315, 0.954673, -0.0561431, 0.188616, 0, 0.982051, -17.391, 3.48731, -3.55518)
 
 [node name="human" type="Node3D" parent="env"]
 
 [node name="Walking" type="Node3D" parent="env/human"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 12.4754, 0)
-script = ExtResource("5_eaj7j")
+script = ExtResource("5_mpl2q")
 
 [node name="Skeleton3D" type="Skeleton3D" parent="env/human/Walking"]
 bones/0/name = "mixamorig_Hips"
@@ -1916,7 +1916,7 @@ libraries = {
 
 [node name="Walking2" type="Node3D" parent="env/human"]
 transform = Transform3D(2, 0, 0, 0, 1.76779, 0.935366, 0, -0.935366, 1.76779, -3.10809, 8.74184, 0)
-script = ExtResource("5_eaj7j")
+script = ExtResource("5_mpl2q")
 
 [node name="Skeleton3D" type="Skeleton3D" parent="env/human/Walking2"]
 bones/0/name = "mixamorig_Hips"
@@ -2390,7 +2390,7 @@ libraries = {
 
 [node name="Walking3" type="Node3D" parent="env/human"]
 transform = Transform3D(2, 0, 0, 0, -1.86596, -0.719863, 0, 0.719863, -1.86596, -6.18274, 8.93172, 0)
-script = ExtResource("5_eaj7j")
+script = ExtResource("5_mpl2q")
 
 [node name="Skeleton3D" type="Skeleton3D" parent="env/human/Walking3"]
 bones/0/name = "mixamorig_Hips"
@@ -3337,7 +3337,7 @@ libraries = {
 
 [node name="Walking5" type="Node3D" parent="env/human"]
 transform = Transform3D(2, 0, 0, 0, 1.86158, 0.731118, 0, -0.731118, 1.86158, 3.54478, 15.7308, 0)
-script = ExtResource("5_eaj7j")
+script = ExtResource("5_mpl2q")
 
 [node name="Skeleton3D" type="Skeleton3D" parent="env/human/Walking5"]
 bones/0/name = "mixamorig_Hips"
@@ -3814,7 +3814,7 @@ libraries = {
 [node name="Skeleton" type="Node3D" parent="env/skeleton"]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 27.164, 0, -26.9219)
 
-[node name="Skeleton2" parent="env/skeleton/Skeleton" instance=ExtResource("11_8tl71")]
+[node name="Skeleton2" parent="env/skeleton/Skeleton" instance=ExtResource("8_4w3fq")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
 
 [node name="nme_skeleton_geo_LOD0" parent="env/skeleton/Skeleton/Skeleton2/char_skeleton_1__1_/SHJntGrp/MAINSHJnt/Skeleton3D" index="0"]
@@ -3823,7 +3823,7 @@ cast_shadow = 0
 [node name="Skeleton2" type="Node3D" parent="env/skeleton"]
 transform = Transform3D(36.2266, 0, 34.462, 0, 50, 0, -34.462, 0, 36.2266, -21.4177, 0, -46.2871)
 
-[node name="Skeleton2" parent="env/skeleton/Skeleton2" instance=ExtResource("11_8tl71")]
+[node name="Skeleton2" parent="env/skeleton/Skeleton2" instance=ExtResource("8_4w3fq")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
 
 [node name="nme_skeleton_geo_LOD0" parent="env/skeleton/Skeleton2/Skeleton2/char_skeleton_1__1_/SHJntGrp/MAINSHJnt/Skeleton3D" index="0"]
@@ -3832,7 +3832,7 @@ cast_shadow = 0
 [node name="Skeleton3" type="Node3D" parent="env/skeleton"]
 transform = Transform3D(29.2196, 0, -40.5736, 0, 50, 0, 40.5736, 0, 29.2196, 43.4627, 0, 21.7551)
 
-[node name="Skeleton2" parent="env/skeleton/Skeleton3" instance=ExtResource("11_8tl71")]
+[node name="Skeleton2" parent="env/skeleton/Skeleton3" instance=ExtResource("8_4w3fq")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
 
 [node name="nme_skeleton_geo_LOD0" parent="env/skeleton/Skeleton3/Skeleton2/char_skeleton_1__1_/SHJntGrp/MAINSHJnt/Skeleton3D" index="0"]
@@ -3841,9 +3841,9 @@ cast_shadow = 0
 [node name="praying" type="Node3D" parent="env"]
 transform = Transform3D(1.97607, 0, -0.308455, 0, 2, 0, 0.308455, 0, 1.97607, -14.919, 1.8, 0.184)
 
-[node name="Praying" parent="env/praying" node_paths=PackedStringArray("target") instance=ExtResource("9_1563r")]
+[node name="Praying" parent="env/praying" node_paths=PackedStringArray("target") instance=ExtResource("9_gfabu")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.47761, 0, 0.230648)
-script = ExtResource("10_wudbu")
+script = ExtResource("10_l81x2")
 animation_name = "mixamo_com"
 target = NodePath("AnimationPlayer")
 
@@ -3905,9 +3905,9 @@ bones/63/rotation = Quaternion(0.581311, 1.79366e-08, -3.62333e-08, 0.813682)
 [node name="AnimationPlayer" parent="env/praying/Praying" index="1"]
 playback_default_blend_time = 1.0
 
-[node name="Praying2" parent="env/praying" node_paths=PackedStringArray("target") instance=ExtResource("9_1563r")]
-transform = Transform3D(1.20783, 0, -4.85192, 0, 5, 0, 4.85192, 0, 1.20783, 6.1354, 0, 3.83642)
-script = ExtResource("10_wudbu")
+[node name="Praying2" parent="env/praying" node_paths=PackedStringArray("target") instance=ExtResource("9_gfabu")]
+transform = Transform3D(1.20783, 0, -4.85192, 0, 5, 0, 4.85192, 0, 1.20783, 5.02595, 0, 5.65099)
+script = ExtResource("10_l81x2")
 animation_name = "mixamo_com"
 target = NodePath("AnimationPlayer")
 random_start_point = true
@@ -3971,12 +3971,12 @@ bones/63/rotation = Quaternion(0.581311, 1.79366e-08, -3.62333e-08, 0.813682)
 [node name="AnimationPlayer" parent="env/praying/Praying2" index="1"]
 playback_default_blend_time = 1.0
 
-[node name="thunder" parent="." instance=ExtResource("7_4atwp")]
+[node name="thunder" parent="." instance=ExtResource("11_8ntcp")]
 visible = false
 
 [node name="clamp" type="Node3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 20, 0)
-script = ExtResource("9_p3bih")
+script = ExtResource("12_psoqy")
 target = NodePath("../cam-pivot")
 initial_rotation_offset_deg = Vector3(-45, 180, 0)
 breathing_min_scale = 1.8
@@ -3985,7 +3985,7 @@ breathing_speed = 1.0
 idle_trigger_time = 0.0
 idle_movement_range = 0.5
 
-[node name="Sketchfab_Scene" parent="clamp" instance=ExtResource("9_b8ljq")]
+[node name="Sketchfab_Scene" parent="clamp" instance=ExtResource("13_rp1qo")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_t2t7q")

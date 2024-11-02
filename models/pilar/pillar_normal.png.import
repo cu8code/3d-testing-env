@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bois67n6tp71h"
-path.s3tc="res://.godot/imported/pillar_normal.png-dd8a0d4a13e28cc884a4dd133a07cf7b.s3tc.ctex"
+path.s3tc="res://.godot/imported/pillar_normal.png-36f49d088f11ae3373435fcd852f871d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://models/pillar_normal.png"
-dest_files=["res://.godot/imported/pillar_normal.png-dd8a0d4a13e28cc884a4dd133a07cf7b.s3tc.ctex"]
+source_file="res://models/pilar/pillar_normal.png"
+dest_files=["res://.godot/imported/pillar_normal.png-36f49d088f11ae3373435fcd852f871d.s3tc.ctex"]
 
 [params]
 

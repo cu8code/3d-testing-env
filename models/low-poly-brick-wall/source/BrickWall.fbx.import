@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cooxgd6ojmuwf"
-path="res://.godot/imported/pillar.glb-afde8944b6a8c7644b66747b3c6bb7f8.scn"
+uid="uid://cn5xt7c7ob2h0"
+path="res://.godot/imported/BrickWall.fbx-53f96550402cc3da6f6629cb2a5e3094.scn"
 
 [deps]
 
-source_file="res://models/pillar.glb"
-dest_files=["res://.godot/imported/pillar.glb-afde8944b6a8c7644b66747b3c6bb7f8.scn"]
+source_file="res://models/low-poly-brick-wall/source/BrickWall.fbx"
+dest_files=["res://.godot/imported/BrickWall.fbx-53f96550402cc3da6f6629cb2a5e3094.scn"]
 
 [params]
 
@@ -27,10 +27,11 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
-gltf/embedded_image_handling=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
